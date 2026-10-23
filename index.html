@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>20eightClub — Built for the drive. Not the showroom. (DRAFT v4 (one-page Shop site; Events/Membership pages later))</title>
+<!doctype html><html lang="en"><head><script>document.documentElement.classList.add("js")</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>20eightClub — Built for the drive. Not the showroom. (DRAFT v5)</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -96,6 +96,21 @@ nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:#000}nav.o
 #join input[type=email],#join input[type=tel]{font:inherit;font-size:16px;padding:14px;border:1px solid #333;background:#111;color:#fff;width:100%;min-width:0;text-transform:none;letter-spacing:0;font-weight:400}
 .form-msg{font-size:15px;padding:14px 16px;border:1px solid #444}.form-msg.ok{border-color:#fff;color:#fff}.form-msg.err{border-color:#a33;color:#f2b8b8}
 #events .wrap>h2,#events .wrap>.sub{text-align:center;margin-left:auto;margin-right:auto}
+
+/* v5 */
+.gallery-sec .gallery{display:grid;grid-template-columns:repeat(3,1fr)}
+.gallery.preview{max-width:1120px;margin:0 auto;padding:0 24px;gap:8px}
+.gallery.preview img:nth-child(4){display:none}
+.gallery-cta{padding:36px 24px 88px;text-align:center}
+.products{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.product a{text-decoration:none}.product .plink:hover{text-decoration:underline}
+.product .zoom{display:flex;overflow:hidden;cursor:zoom-in}
+.product .zoom img{transition:transform .25s ease-out;transform-origin:50% 50%}
+@media(hover:hover) and (pointer:fine){.product .zoom.zooming img{transform:scale(2);transition:transform .15s ease-out}}
+@media(max-width:640px){.gallery-sec .gallery.preview{grid-template-columns:1fr 1fr;padding:0 16px}.gallery.preview img:nth-child(4){display:block}.gallery.preview img:last-child{grid-column:auto;aspect-ratio:1}.gallery-cta{padding-bottom:64px}}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.product .zoom img{transition:none}}
 </style></head><body>
 <!-- DRAFT v4 (one-page Shop site; Events/Membership pages later) — copy from Rex's brand-voice-and-site-copy-v1.md (not approved).
 Tagline used: option 1 "Built for the drive. Not the showroom."
@@ -104,7 +119,7 @@ Other tagline options:
   3. Paid over MSRP. Worth every mile.
 Unused copy kept for later:
   Shop empty state: "Nothing in the garage right now. Join the list and you'll hear about the next drop first."
-  Form success: "You're in. Watch your inbox for the next drive."
+  Form success: "You're in. Watch your inbox for upcoming meets, new merch drops, and members-only specials."
 -->
 <nav><div class="wrap"><a href="#top"><img src="wordmark-white.png" alt="20eightClub"></a>
 <ul><li><a href="#shop">Shop</a></li><li><a href="#events">Events</a></li><li><a href="#join">Join</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
@@ -118,29 +133,27 @@ Unused copy kept for later:
 <section class="light" id="shop"><div class="wrap">
 <h2><span class="m">Limited</span> DROPS.</h2>
 <p class="sub">Original 20eightClub designs, printed in small runs. When a drop's gone, it's gone.</p>
-<div class="grid">
-<div class="card"><div class="img photo"><img src="shirt-over-msrp-black.webp" alt="Black OVER MSRP tee, front and back"></div><div class="info"><b>Over MSRP Tee · Black</b><span>$XX</span></div></div>
-<div class="card"><div class="img photo"><img src="shirt-need-money-white.webp" alt="White tee with 28 emblem on front and NEED MONEY FOR SUPERCAR on back"></div><div class="info"><b>Need Money For Supercar Tee · White</b><span>$XX</span></div></div>
+<!-- Product grid: add more .card.product blocks here -->
+<div class="grid products">
+<!-- TODO product URL: replace href with the real over-msrp-black product page -->
+<div class="card product" data-product="over-msrp-black"><a class="img photo zoom" href="https://shop.the20eightclub.com" data-product="over-msrp-black"><img src="shirt-over-msrp-black.webp" alt="Black OVER MSRP tee, front and back"></a><div class="info"><b><a class="plink" href="https://shop.the20eightclub.com" data-product="over-msrp-black">Over MSRP Tee · Black</a></b><span>$XX</span></div></div>
+<!-- TODO product URL: replace href with the real need-money-white product page -->
+<div class="card product" data-product="need-money-white"><a class="img photo zoom" href="https://shop.the20eightclub.com" data-product="need-money-white"><img src="shirt-need-money-white.webp" alt="White tee with 28 emblem on front and NEED MONEY FOR SUPERCAR on back"></a><div class="info"><b><a class="plink" href="https://shop.the20eightclub.com" data-product="need-money-white">Need Money For Supercar Tee · White</a></b><span>$XX</span></div></div>
 </div>
-<p class="note">Printed to order. Ships in [X] days.</p>
-<div class="shopcta"><a class="btn" href="https://shop.the20eightclub.com">Shop the Drop</a><small>Opens our Fourthwall store (placeholder: shop.the20eightclub.com).</small></div>
+<div class="shopcta"><a class="btn" href="https://shop.the20eightclub.com">View catalog</a><small>Opens our Fourthwall store (placeholder: shop.the20eightclub.com).</small></div>
 </div></section>
 <section id="events"><div class="wrap">
 <h2 class="m" style="font-weight:400">See you there.</h2>
 <p class="sub">Morning drives, coffee meets, and the occasional long way home. Members hear first.</p>
 <div class="grid ev-one"><div class="ev"><div class="date">Date TBA</div><h3>28 Club Meet</h3><div class="loc">Weston Town Center · Weston, FL</div><div class="meta">Time TBA</div><a href="#">Details / RSVP</a></div></div></div></section>
 <section class="gallery-sec" id="gallery"><div class="wrap"><h2><span class="m" style="font-weight:400">Take a look.</span></h2></div>
-<div class="gallery" aria-label="Photos from the meet">
+<div class="gallery preview" aria-label="Photos from the meet">
 <img loading="lazy" src="meet-yellow-lamborghini.jpg" alt="Yellow Lamborghini at the club meet">
 <img loading="lazy" src="tee-over-msrp-handshake-blue-car.jpg" alt="Member in the Over MSRP tee shaking hands with a driver in a blue supercar">
 <img loading="lazy" src="meet-red-lfa-rear.jpg" alt="Red Lexus LFA from the rear on a sunny street">
 <img loading="lazy" src="meet-blue-aventador-svj-lineup.jpg" alt="Blue Aventador SVJ leading a line-up of cars">
-<img loading="lazy" src="meet-handshake-red-convertible.jpg" alt="Member in a 28 tee shaking hands with a driver in a red classic convertible">
-<img loading="lazy" src="tee-over-msrp-worn-back-yellow-car.jpg" alt="Member wearing the Over MSRP tee, seen from behind, next to a yellow supercar">
-<img loading="lazy" src="meet-yellow-aventador-rear.jpg" alt="Rear of a yellow Aventador under palm trees">
-<img loading="lazy" src="meet-chiron-sport-badge.jpg" alt="Close-up of a Chiron Sport badge">
-<img loading="lazy" src="meet-group-clock-tower.jpg" alt="Club members in black tees at the clock tower between cars">
-</div></section>
+</div>
+<div class="wrap gallery-cta"><a class="btn ghost" href="gallery.html">View gallery</a></div></section>
 <section class="dark" id="join"><div class="wrap">
 <h2>JOIN 20EIGHTCLUB.</h2>
 <p class="sub">Tell us who you are and what you drive. We'll send event invites and early drop access.</p>
@@ -150,17 +163,17 @@ Unused copy kept for later:
 <input type="hidden" name="subject" value="New 20eightClub member signup">
 <input type="hidden" name="from_name" value="20eightClub Website">
 <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label>First name <em>(optional)</em><input type="text" name="First Name" autocomplete="given-name" placeholder="First"></label>
-<label>Last name <em>(optional)</em><input type="text" name="Last Name" autocomplete="family-name" placeholder="Last"></label>
+<label>First name<input type="text" name="First Name" required autocomplete="given-name" placeholder="First"></label>
+<label>Last name<input type="text" name="Last Name" required autocomplete="family-name" placeholder="Last"></label>
 <label>Email<input type="email" name="Email" required autocomplete="email" placeholder="you@example.com"></label>
-<label>Phone number<input type="tel" name="Phone" autocomplete="tel" placeholder="(239) 555-0123"></label>
-<label class="full">What supercar do you have?<textarea name="Supercar" placeholder="Tell us about your car"></textarea></label>
+<label>Phone number<input type="tel" name="Phone" required autocomplete="tel" placeholder="(239) 555-0123"></label>
+<label class="full">What car do you drive? <em>(optional)</em><textarea name="Car" placeholder="Year, make, model"></textarea></label>
 <label class="chk full"><input type="checkbox" name="Consent" value="Yes" required>Send me event invites and drop announcements. Unsubscribe anytime.</label>
 <div class="full"><button class="btn" type="submit">Join the Club</button></div>
 <p class="form-msg full" role="status" aria-live="polite" hidden></p>
 </form>
 <p class="privacy">We only use your details to contact you about 20eightClub, and we never sell or share them.</p></div></section>
-<footer><div class="wrap"><img src="emblem-white.png" alt="28"><span>20eightClub · South Florida · Not affiliated with any automaker.</span><span>Draft mockup v4</span></div></footer>
+<footer><div class="wrap"><img src="emblem-white.png" alt="28"><span>20eightClub · South Florida · Not affiliated with any automaker.</span><span>Draft mockup v5</span></div></footer>
 <script>
 (function(){var n=document.querySelector('nav'),b=n.querySelector('.burger');
 function set(o){n.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Menu');}
@@ -174,8 +187,20 @@ function show(t,c){m.textContent=t;m.className='form-msg full '+c;m.hidden=false
 f.addEventListener('submit',function(e){e.preventDefault();b.disabled=true;var t=b.textContent;b.textContent='Sending…';
 fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
 .then(function(r){return r.json().then(function(d){return{ok:r.ok&&d.success,d:d}})})
-.then(function(x){if(x.ok){show("You're in. Watch your inbox for the next drive.",'ok');f.reset();}else{show((x.d&&x.d.message)||'Something went wrong. Please try again.','err');}})
+.then(function(x){if(x.ok){show("You're in. Watch your inbox for upcoming meets, new merch drops, and members-only specials.",'ok');f.reset();}else{show((x.d&&x.d.message)||'Something went wrong. Please try again.','err');}})
 .catch(function(){show('Something went wrong. Please check your connection and try again.','err');})
 .finally(function(){b.disabled=false;b.textContent=t;});});})();
+</script>
+<script>
+(function(){var els=[];function add(sel,stag){document.querySelectorAll(sel).forEach(function(e,i){e.classList.add('reveal');if(stag)e.style.setProperty('--d',(Math.min(i,5)*0.08)+'s');els.push(e)})}
+add('section h2',0);add('.products .card',1);add('.ev',0);add('.gallery img',1);add('#join-form',0);
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:0.1});
+els.forEach(function(e){io.observe(e)});})();
+(function(){if(!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+document.querySelectorAll('.product .zoom').forEach(function(z){var im=z.querySelector('img');
+z.addEventListener('mouseenter',function(){z.classList.add('zooming')});
+z.addEventListener('mouseleave',function(){z.classList.remove('zooming');im.style.transformOrigin='50% 50%'});
+z.addEventListener('mousemove',function(e){var r=im.getBoundingClientRect(),b=z.getBoundingClientRect();var x=(e.clientX-b.left)/b.width*100,y=(e.clientY-b.top)/b.height*100;im.style.transformOrigin=x+'% '+y+'%'});});})();
 </script>
 </body></html>
