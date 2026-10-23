@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><script>document.documentElement.classList.add("js")</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>20eightClub — Built for the drive. Not the showroom. — About (DRAFT v5)</title>
+<title>About — 20eightClub (DRAFT)</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -111,60 +111,112 @@ nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:#000}nav.o
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.product .zoom img{transition:none}}
-.gallery-page{padding-bottom:88px}.full-gallery{max-width:1120px;margin:0 auto;padding:0 24px;gap:8px}@media(max-width:640px){.gallery-sec .full-gallery{padding:0 16px;grid-template-columns:1fr 1fr}}
+
 /* v6 */
 nav img{height:24px}
 .shopcta{justify-content:center}
 .mmenu a{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:0;display:inline-block;transform:rotate(-3deg)}
 #about{background:#0a0a0a;text-align:center}#about .sub{margin:0 auto;color:#bbb;font-size:18px}
 @media(max-width:640px){nav img{height:22px}}
-.about-page{min-height:60vh;text-align:center}.about-page .sub{margin:16px auto}</style></head><body>
-<!-- DRAFT v4 (one-page Shop site; Events/Membership pages later) — copy from Rex's brand-voice-and-site-copy-v1.md (not approved).
-Tagline used: option 1 "Built for the drive. Not the showroom."
-Other tagline options:
-  2. South Florida. Supercars. Good company.
-  3. Paid over MSRP. Worth every mile.
-Unused copy kept for later:
-  Shop empty state: "Nothing in the garage right now. Join the list and you'll hear about the next drop first."
-  Form success: "You're in. Watch your inbox for the next drive."
--->
+
+/* v7 headlight sweep */
+.hero{overflow:hidden;isolation:isolate}
+.hero>*:not(.hero-label){position:relative;z-index:1}
+.hero::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:45%;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0;
+background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.08) 35%,rgba(255,255,255,.32) 50%,rgba(255,255,255,.08) 65%,rgba(255,255,255,0) 100%);
+transform:translateX(-200%) skewX(-12deg);animation:sweep 1.4s cubic-bezier(.45,.05,.35,1) .4s 1 both;will-change:transform}
+@keyframes sweep{0%{transform:translateX(-200%) skewX(-12deg);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(320%) skewX(-12deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero::after{animation:none;display:none}}
+/* ===== About page (draft) ===== */
+.ahero{min-height:calc(62.5vw + 250px);justify-content:flex-end;padding-bottom:56px;background:linear-gradient(180deg,rgba(10,10,10,.35) 0%,rgba(10,10,10,0) 18%,rgba(10,10,10,0) calc(62.5vw - 230px),#0a0a0a calc(62.5vw - 20px)),url("hero-crew-clock-tower.webp") 50% 0/100% auto no-repeat,#0a0a0a}@media(min-width:1600px){.ahero{min-height:1170px;background:linear-gradient(180deg,rgba(10,10,10,.35) 0%,rgba(10,10,10,0) 18%,rgba(10,10,10,0) 840px,#0a0a0a 1010px),url("hero-crew-clock-tower.webp") 50% 0/1600px auto no-repeat,#0a0a0a}}html,body{overflow-x:clip}
+.ahero h1{font-size:clamp(36px,6vw,68px);margin:10px 0 10px}
+.ahero .lead{margin-bottom:28px}
+.roadline{height:4px;width:min(320px,60vw);background:repeating-linear-gradient(90deg,#f5c400 0 28px,transparent 28px 48px);background-size:48px 4px;animation:road 1.2s linear infinite}
+@keyframes road{to{background-position:-48px 0}}
+.stripe{height:28px;background:linear-gradient(180deg,#0a0a0a 0 6px,#fff 6px 11px,#0a0a0a 11px 17px,#fff 17px 22px,#0a0a0a 22px)}
+.gear{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;border:1px solid #333;border-radius:20px;padding:5px 14px 5px 6px;margin-bottom:18px;background:#111}
+.gear::before{content:"";width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#f5c400 0 3px,transparent 4px),#222;box-shadow:inset 0 0 0 2px #555}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.story img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-bottom:4px solid #f5c400}
+.ph{color:#c9c9c9;border-left:2px dashed #f5c400;padding:4px 0 4px 14px;margin:18px 0;font-style:italic}
+.carbon{background:radial-gradient(circle at 30% 0,rgba(255,255,255,.06),transparent 60%),repeating-linear-gradient(45deg,#141414 0 4px,#0c0c0c 4px 8px),repeating-linear-gradient(-45deg,#141414 0 4px,#0c0c0c 4px 8px);background-blend-mode:normal,normal,lighten}
+.dogrid{margin-top:32px;grid-template-columns:repeat(3,1fr)}
+.do{background:rgba(0,0,0,.55);border:1px solid #2a2a2a;padding:28px;position:relative;overflow:hidden}
+.do::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,#f5c400,#f5c400 60%,#d22 100%);transform:scaleX(.25);transform-origin:left;transition:transform .4s}
+.do:hover::after{transform:scaleX(1)}
+.do .num{font-family:'Permanent Marker';font-size:34px;color:#f5c400;line-height:1}
+.do h3{font-size:20px;margin:10px 0 4px}
+.strip-sec{padding:0;background:#000}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:grayscale(.25);transition:filter .3s}.strip img:hover{filter:none}
+.ctasec{text-align:center;position:relative;overflow:hidden;background:#111}
+.ctasec .sub{margin:0 auto 32px;color:#bbb}.ctasec .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+@media(max-width:640px){.ahero{min-height:660px;justify-content:flex-end;align-items:center;text-align:center;padding:96px 20px 48px;background:linear-gradient(180deg,rgba(10,10,10,.3),rgba(10,10,10,0) 20%,rgba(10,10,10,0) 340px,#0a0a0a 480px),url("hero-crew-clock-tower.webp") 50% 0/auto 500px no-repeat,#0a0a0a}.ahero .roadline{margin:0 auto}
+.story{grid-template-columns:1fr;gap:32px;text-align:left}.dogrid{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){.roadline{animation:none}}
+.joinsec{background:#0a0a0a;text-align:center}.joinsec .ph{max-width:560px;margin:18px auto 32px;text-align:left}.joinsec .btns{display:flex;justify-content:center}
+.storybg{position:relative;overflow:hidden;padding:140px 0;min-height:620px;display:flex;align-items:center}
+.storybg .sbg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;z-index:0}
+.storybg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.93) 0%,rgba(10,10,10,.8) 38%,rgba(10,10,10,.35) 70%,rgba(10,10,10,.2) 100%),linear-gradient(180deg,#0a0a0a 0%,rgba(10,10,10,0) 18%,rgba(10,10,10,0) 80%,#0a0a0a 100%)}
+.storybg .wrap{position:relative;z-index:2;width:100%}.storybg .story{display:block}.storybg .story>div{max-width:560px}
+.storybg .ph{color:#e6e6e6;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+@media(max-width:640px){.storybg{padding:96px 0;min-height:600px}.storybg .sbg img{object-position:30% 60%}.storybg::before{background:linear-gradient(180deg,#0a0a0a 0%,rgba(10,10,10,.82) 20%,rgba(10,10,10,.7) 60%,rgba(10,10,10,.85) 100%)}}
+</style></head><body>
+<!-- DRAFT About page. All [Copy from Rex: ...] blocks are placeholders. Hero: 9K1A2193. -->
 <nav><div class="wrap"><a href="index.html"><img src="wordmark-white.png" alt="20eightClub"></a>
-<ul><li><a href="index.html#shop">Shop</a></li><!-- TODO: About page coming later --><li><a href="about.html">About</a></li><li><a href="index.html#events">Events</a></li><!-- TODO: contact page coming; point to contact.html when it exists --><li><a href="index.html#join">Contact</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
+<ul><li><a href="index.html#shop">Shop</a></li><li><a href="about.html" aria-current="page" style="color:#fff">About</a></li><li><a href="index.html#events">Events</a></li><li><a href="index.html#join">Contact</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
 <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button></div>
-<div class="mmenu" id="mmenu"><a href="index.html#shop">Shop</a><!-- TODO: About page coming later --><a href="about.html">About</a><a href="index.html#events">Events</a><!-- TODO: contact page coming; point to contact.html when it exists --><a href="index.html#join">Contact</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
-<section class="about-page" id="about"><div class="wrap">
-<h2><span class="m" style="font-weight:400">About</span> the club.</h2>
-<p class="sub">Coming soon.</p>
-<p><a href="index.html">← Back to home</a></p>
+<div class="mmenu" id="mmenu"><a href="index.html#shop">Shop</a><a href="about.html">About</a><a href="index.html#events">Events</a><a href="index.html#join">Contact</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
+<header class="hero ahero" id="top">
+<p class="tagline">South Florida · Est. [year]</p>
+<h1>About <span class="m">20eightClub</span></h1>
+<p class="lead">[Copy from Rex: one-line hero subhead — who we are in a sentence]</p>
+<div class="roadline" aria-hidden="true"></div>
+</header>
+<section id="story" class="storybg"><picture class="sbg" aria-hidden="true"><source media="(max-width:640px)" srcset="story-yellow-lambo.webp"><img loading="lazy" src="story-yellow-lambo-2000.webp" alt=""></picture><div class="wrap story">
+<div><span class="gear">Gear 1 · Our story</span>
+<h2><span class="m">Not the same</span> car club.</h2>
+<p class="ph">[Copy from Rex: origin story — how 20eightClub started, 2–3 sentences]</p>
+<p class="ph">[Copy from Rex: mission statement — what the club stands for, 1–2 sentences]</p></div>
 </div></section>
-<footer><div class="wrap"><img src="emblem-white.png" alt="28"><span>20eightClub · South Florida · Not affiliated with any automaker.</span><span>Draft mockup v5</span></div></footer>
+<section id="do" class="carbon"><div class="wrap">
+<span class="gear">Gear 2 · What we do</span>
+<h2 class="m" style="font-weight:400">What we do.</h2>
+<div class="grid dogrid">
+<div class="do"><div class="num">01</div><h3>Meets &amp; drives</h3><p class="ph">[Copy from Rex: meets — coffee meets, morning drives, how often]</p></div>
+<div class="do"><div class="num">02</div><h3>Merch drops</h3><p class="ph">[Copy from Rex: limited drops — small runs, original designs]</p></div>
+<div class="do"><div class="num">03</div><h3>Members specials</h3><p class="ph">[Copy from Rex: members-only perks, early access, partner deals]</p></div>
+</div></div></section>
+<div class="stripe" aria-hidden="true"></div>
+<section id="membership" class="joinsec"><div class="wrap">
+<span class="gear">Gear 3 · Membership</span>
+<h2>Thinking of joining the club?</h2>
+<p class="ph">[Copy from Rex: short pitch for membership — who it's for and what members get, 1–2 sentences]</p>
+<div class="btns"><!-- membership.html not built yet --><a class="btn" href="membership.html">Become a member</a></div>
+</div></section>
+<section class="strip-sec"><div class="strip">
+<img loading="lazy" src="strip-1.webp" alt="Supercars lined up at the meet">
+<img loading="lazy" src="strip-2.webp" alt="Supercars lined up along the street at the meet">
+<img loading="lazy" src="strip-3.webp" alt="White supercar with racing stripe">
+<img loading="lazy" src="strip-4.webp" alt="Supercars on display at the meet">
+</div></section>
+<section id="cta" class="ctasec"><div class="wrap">
+<span class="gear">Gear 4 · Start your engine</span>
+<h2 class="m" style="font-weight:400">Pull up.</h2>
+<p class="sub">[Copy from Rex: join/contact CTA line — invites to meets and early drop access]</p>
+<div class="btns"><a class="btn" href="index.html#join">Join the Club</a><a class="btn ghost" href="index.html#events">See events</a></div>
+</div></section>
+<footer><div class="wrap"><img src="emblem-white.png" alt="28"><span>20eightClub · South Florida · Not affiliated with any automaker.</span><span>Draft About page</span></div></footer>
 <script>
 (function(){var n=document.querySelector('nav'),b=n.querySelector('.burger');
 function set(o){n.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Menu');}
 b.addEventListener('click',function(){set(!n.classList.contains('open'))});
 n.querySelectorAll('.mmenu a').forEach(function(a){a.addEventListener('click',function(){set(false)})});})();
-</script>
-<script>
-(function(){var f=document.getElementById('join-form');if(!f||!window.fetch)return;
-var m=f.querySelector('.form-msg'),b=f.querySelector('button[type=submit]');
-function show(t,c){m.textContent=t;m.className='form-msg full '+c;m.hidden=false;}
-f.addEventListener('submit',function(e){e.preventDefault();b.disabled=true;var t=b.textContent;b.textContent='Sending…';
-fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-.then(function(r){return r.json().then(function(d){return{ok:r.ok&&d.success,d:d}})})
-.then(function(x){if(x.ok){show("You're in. Watch your inbox for the next drive.",'ok');f.reset();}else{show((x.d&&x.d.message)||'Something went wrong. Please try again.','err');}})
-.catch(function(){show('Something went wrong. Please check your connection and try again.','err');})
-.finally(function(){b.disabled=false;b.textContent=t;});});})();
-</script>
-<script>
+</script><script>
 (function(){var els=[];function add(sel,stag){document.querySelectorAll(sel).forEach(function(e,i){e.classList.add('reveal');if(stag)e.style.setProperty('--d',(Math.min(i,5)*0.08)+'s');els.push(e)})}
-add('section h2',0);add('.products .card',1);add('.ev',0);add('.gallery img',1);add('#join-form',0);
+add('section h2',0);add('.ph',1);add('.do',1);add('.joinsec .btns',0);add('.strip img',1);add('.ctasec .btns',0);
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return;}
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:0.1});
 els.forEach(function(e){io.observe(e)});})();
-(function(){if(!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
-document.querySelectorAll('.product .zoom').forEach(function(z){var im=z.querySelector('img');
-z.addEventListener('mouseenter',function(){z.classList.add('zooming')});
-z.addEventListener('mouseleave',function(){z.classList.remove('zooming');im.style.transformOrigin='50% 50%'});
-z.addEventListener('mousemove',function(e){var r=im.getBoundingClientRect(),b=z.getBoundingClientRect();var x=(e.clientX-b.left)/b.width*100,y=(e.clientY-b.top)/b.height*100;im.style.transformOrigin=x+'% '+y+'%'});});})();
 </script>
 </body></html>
