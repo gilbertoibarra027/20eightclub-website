@@ -118,6 +118,15 @@ nav img{height:24px}
 .mmenu a{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:0;display:inline-block;transform:rotate(-3deg)}
 #about{background:#0a0a0a;text-align:center}#about .sub{margin:0 auto;color:#bbb;font-size:18px}
 @media(max-width:640px){nav img{height:22px}}
+
+/* v7 headlight sweep */
+.hero{overflow:hidden;isolation:isolate}
+.hero>*:not(.hero-label){position:relative;z-index:1}
+.hero::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:45%;z-index:0;pointer-events:none;mix-blend-mode:screen;opacity:0;
+background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.08) 35%,rgba(255,255,255,.32) 50%,rgba(255,255,255,.08) 65%,rgba(255,255,255,0) 100%);
+transform:translateX(-200%) skewX(-12deg);animation:sweep 1.4s cubic-bezier(.45,.05,.35,1) .4s 1 both;will-change:transform}
+@keyframes sweep{0%{transform:translateX(-200%) skewX(-12deg);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(320%) skewX(-12deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero::after{animation:none;display:none}}
 </style></head><body>
 <!-- DRAFT v4 (one-page Shop site; Events/Membership pages later) — copy from Rex's brand-voice-and-site-copy-v1.md (not approved).
 Tagline used: option 1 "Built for the drive. Not the showroom."
