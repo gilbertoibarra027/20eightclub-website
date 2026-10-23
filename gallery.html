@@ -111,7 +111,14 @@ nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:#000}nav.o
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.product .zoom img{transition:none}}
-.gallery-page{padding-bottom:88px}.full-gallery{max-width:1120px;margin:0 auto;padding:0 24px;gap:8px}@media(max-width:640px){.gallery-sec .full-gallery{padding:0 16px;grid-template-columns:1fr 1fr}}</style></head><body>
+.gallery-page{padding-bottom:88px}.full-gallery{max-width:1120px;margin:0 auto;padding:0 24px;gap:8px}@media(max-width:640px){.gallery-sec .full-gallery{padding:0 16px;grid-template-columns:1fr 1fr}}
+/* v6 */
+nav img{height:24px}
+.shopcta{justify-content:center}
+.mmenu a{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:0;display:inline-block;transform:rotate(-3deg)}
+#about{background:#0a0a0a;text-align:center}#about .sub{margin:0 auto;color:#bbb;font-size:18px}
+@media(max-width:640px){nav img{height:22px}}
+</style></head><body>
 <!-- DRAFT v4 (one-page Shop site; Events/Membership pages later) — copy from Rex's brand-voice-and-site-copy-v1.md (not approved).
 Tagline used: option 1 "Built for the drive. Not the showroom."
 Other tagline options:
@@ -122,9 +129,9 @@ Unused copy kept for later:
   Form success: "You're in. Watch your inbox for the next drive."
 -->
 <nav><div class="wrap"><a href="index.html"><img src="wordmark-white.png" alt="20eightClub"></a>
-<ul><li><a href="index.html#shop">Shop</a></li><li><a href="index.html#events">Events</a></li><li><a href="index.html#join">Join</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
+<ul><li><a href="index.html#shop">Shop</a></li><!-- TODO: About page coming later --><li><a href="about.html">About</a></li><li><a href="index.html#events">Events</a></li><!-- TODO: contact page coming; point to contact.html when it exists --><li><a href="index.html#join">Contact</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
 <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button></div>
-<div class="mmenu" id="mmenu"><a href="index.html#shop">Shop</a><a href="index.html#events">Events</a><a href="index.html#join">Join</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
+<div class="mmenu" id="mmenu"><a href="index.html#shop">Shop</a><!-- TODO: About page coming later --><a href="about.html">About</a><a href="index.html#events">Events</a><!-- TODO: contact page coming; point to contact.html when it exists --><a href="index.html#join">Contact</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
 <section class="gallery-sec gallery-page" id="gallery"><div class="wrap"><h2><span class="m" style="font-weight:400">Take a look.</span></h2><p class="sub"><a href="index.html">← Back to home</a></p></div>
 <div class="gallery full-gallery" aria-label="Photos from the meet">
 <img loading="lazy" src="meet-yellow-lamborghini.jpg" alt="Yellow Lamborghini at the club meet">

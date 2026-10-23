@@ -111,6 +111,13 @@ nav.open{backdrop-filter:none;-webkit-backdrop-filter:none;background:#000}nav.o
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out;transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.product .zoom img{transition:none}}
+
+/* v6 */
+nav img{height:24px}
+.shopcta{justify-content:center}
+.mmenu a{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:0;display:inline-block;transform:rotate(-3deg)}
+#about{background:#0a0a0a;text-align:center}#about .sub{margin:0 auto;color:#bbb;font-size:18px}
+@media(max-width:640px){nav img{height:22px}}
 </style></head><body>
 <!-- DRAFT v4 (one-page Shop site; Events/Membership pages later) — copy from Rex's brand-voice-and-site-copy-v1.md (not approved).
 Tagline used: option 1 "Built for the drive. Not the showroom."
@@ -122,9 +129,9 @@ Unused copy kept for later:
   Form success: "You're in. Watch your inbox for upcoming meets, new merch drops, and members-only specials."
 -->
 <nav><div class="wrap"><a href="#top"><img src="wordmark-white.png" alt="20eightClub"></a>
-<ul><li><a href="#shop">Shop</a></li><li><a href="#events">Events</a></li><li><a href="#join">Join</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
+<ul><li><a href="#shop">Shop</a></li><!-- TODO: About page coming later --><li><a href="about.html">About</a></li><li><a href="#events">Events</a></li><!-- TODO: contact page coming; point to contact.html when it exists --><li><a href="#join">Contact</a></li><li class="soon">Membership <i>Coming soon</i></li></ul>
 <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button></div>
-<div class="mmenu" id="mmenu"><a href="#shop">Shop</a><a href="#events">Events</a><a href="#join">Join</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
+<div class="mmenu" id="mmenu"><a href="#shop">Shop</a><!-- TODO: About page coming later --><a href="about.html">About</a><a href="#events">Events</a><!-- TODO: contact page coming; point to contact.html when it exists --><a href="#join">Contact</a><span class="msoon">Membership <i>Coming soon</i></span></div></nav>
 <header class="hero" id="top">
 <h1><span class="m">Not the same</span> car club.</h1>
 <p class="lead">20eightClub brings South Florida's supercar owners together for drives, meets, and limited drops.</p>
@@ -140,7 +147,7 @@ Unused copy kept for later:
 <!-- TODO product URL: replace href with the real need-money-white product page -->
 <div class="card product" data-product="need-money-white"><a class="img photo zoom" href="https://shop.the20eightclub.com" data-product="need-money-white"><img src="shirt-need-money-white.webp" alt="White tee with 28 emblem on front and NEED MONEY FOR SUPERCAR on back"></a><div class="info"><b><a class="plink" href="https://shop.the20eightclub.com" data-product="need-money-white">Need Money For Supercar Tee · White</a></b><span>$XX</span></div></div>
 </div>
-<div class="shopcta"><a class="btn" href="https://shop.the20eightclub.com">View catalog</a><small>Opens our Fourthwall store (placeholder: shop.the20eightclub.com).</small></div>
+<div class="shopcta"><a class="btn" href="https://shop.the20eightclub.com">View catalog</a></div>
 </div></section>
 <section id="events"><div class="wrap">
 <h2 class="m" style="font-weight:400">See you there.</h2>
